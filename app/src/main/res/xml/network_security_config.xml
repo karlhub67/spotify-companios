@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The PC server speaks plain http:// and ws:// (no TLS). Android blocks that
+  by default, so cleartext must be allowed. XML cannot restrict by IP range,
+  so the app itself refuses to connect to anything except a private IPv4
+  address (see Net.kt). The app makes no other network requests.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

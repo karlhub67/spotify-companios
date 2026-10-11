@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Spotify Companion</string>
+    <string name="a11y_description">Lets Spotify Companion update YOUR Messenger Note with the song you are playing. It only works inside the Messenger app. It never reads other apps, and it only acts after you approve a test in the app.</string>
+</resources>

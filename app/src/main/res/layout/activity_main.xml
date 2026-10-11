@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DISCONNECTED"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/retryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/hostInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:digits="0123456789."
+                android:hint="PC IP address (e.g. 192.168.100.119)"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/portInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Port (default 8765)"
+                android:inputType="number"
+                android:maxLength="5" />
+
+            <EditText
+                android:id="@+id/codeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="6-digit pairing code (shown on the PC)"
+                android:inputType="numberPassword"
+                android:maxLength="6" />
+
+            <Button
+                android:id="@+id/testButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test Connection" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/connectButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:text="Connect" />
+
+                <Button
+                    android:id="@+id/disconnectButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="Disconnect" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Song"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Artist"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/artistText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Playback"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/playbackText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Last message received"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/lastMessageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Last connection error"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/lastErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Messenger Notes (Stage 3)"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1. Accessibility Status"
+                android:textColor="?android:attr/textColorSecondary" />
+            <TextView
+                android:id="@+id/accStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DISABLED" android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="2. Messenger Status"
+                android:textColor="?android:attr/textColorSecondary" />
+            <TextView
+                android:id="@+id/messengerStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOT DETECTED" android:textStyle="bold" />
+            <Button
+                android:id="@+id/openMessengerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Open Messenger" />
+            <Button
+                android:id="@+id/openA11yButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Android Accessibility settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Diagnostic mode (investigate what Messenger exposes)"
+                android:textStyle="bold" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/diagSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diagnostic mode (Messenger screens only, texts redacted)" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/captureButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Capture in 8 s" />
+                <Button android:id="@+id/copyDiagButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Copy" />
+                <Button android:id="@+id/clearDiagButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Clear" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/diagText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="(diagnostic reports appear here)"
+                    android:textIsSelectable="true"
+                    android:textSize="10sp" />
+            </ScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Note format"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/singleTemplateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Single-line template ({title} {artist})" android:inputType="text" android:maxLines="1" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/multiSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use the multiline format instead" />
+            <EditText
+                android:id="@+id/multiTemplateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Multiline template (use new lines)" android:inputType="textMultiLine" android:minLines="2" />
+            <EditText
+                android:id="@+id/delayInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Delay after a track change, seconds (0-120)" android:inputType="number" android:maxLength="3" />
+            <EditText
+                android:id="@+id/limitInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Assumed Note length limit (characters)" android:inputType="number" android:maxLength="3" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/pausedSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Also update the Note while Spotify is paused" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/backSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Allow pressing Back (max 3x) to reach the Notes screen" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/deleteSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Experimental: delete the old Note before replacing" />
+            <Button
+                android:id="@+id/saveNoteSettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Note settings" />
+            <Button
+                android:id="@+id/labelsToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Advanced: control labels (show/hide)" />
+            <LinearLayout
+                android:id="@+id/labelsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Test, then automate"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/testNoteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Test Note Update" />
+            <Button
+                android:id="@+id/approveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I checked Messenger: the test Note is correct - approve" />
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/autoSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Enable Automatic Note Updates" />
+            <Button
+                android:id="@+id/stopAutoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Stop Automation" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="7. Last Update Result"
+                android:textColor="?android:attr/textColorSecondary" />
+            <TextView
+                android:id="@+id/lastResultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Last successful update"
+                android:textColor="?android:attr/textColorSecondary" />
+            <TextView
+                android:id="@+id/lastSuccessText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-" />
+            <TextView
+                android:id="@+id/pendingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Debug log"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <ScrollView
+        android:id="@+id/logScroll"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <TextView
+            android:id="@+id/logText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:textSize="11sp" />
+    </ScrollView>
+</LinearLayout>
